@@ -8,12 +8,11 @@ var userSchema = new mongoose.Schema({
 });
 
 var postSchema = new mongoose.Schema({
-    text: String,
-    created_by: String,
-    created_at: {type: Date, default: Date.now},
+	//created_by: { type: Schema.ObjectId, ref: 'User' },   //should be changed to ObjectId, ref "User"
+	created_by: String,
+	created_at: {type: Date, default: Date.now},
+	text: String
 });
 
 mongoose.model('Post', postSchema);
-//declare a model called User which has a schema userSchema
-mongoose.model("User", userSchema);
-
+mongoose.model('User', userSchema);
