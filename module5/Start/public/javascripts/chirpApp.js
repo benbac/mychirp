@@ -48,6 +48,18 @@ app.controller('mainController', function($rootScope, $scope, postService){
 			$scope.newPost = {created_by:'', text:'', created_at:''};
 		});
 	};
+	
+	$scope.removePost = function(index){
+		var deletingPost = $scope.posts.splice(index, 1);//removing from client side
+		
+		console.log("TODO remove from db");
+		postService.delete(deletingPost, function(){
+			//$scope.posts = postService.query();
+		});
+		
+		
+	};
+	
 });
 
 app.controller('authController', function($scope, $http, $rootScope, $location){

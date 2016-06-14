@@ -52,8 +52,6 @@ var initPassport = require('./passport-init');
 initPassport(passport);
 
 
-
-
 // error handlers
 
 // development error handler
